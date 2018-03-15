@@ -30,7 +30,7 @@ namespace CSharpP2_Homework_5
                 ClearAddEmpDialog();
                 return;
             }
-            model.Employees.Add(new Employee( view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, (int)view.cbDeps.SelectedValue));
+            model.Employees.Add(new Employee( view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, view.cbDeps.SelectedValue != null ? (int)view.cbDeps.SelectedValue : 0));
             ClearAddEmpDialog();
         }
 

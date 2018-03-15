@@ -18,6 +18,7 @@ namespace CSharpP2_Homework_5
         {
             employees = new ObservableCollection<Employee>();
             departments = DepartmentBook.Departments;
+            departments.Add(new Department("Не указан"));
         }
 
         #region Данные
