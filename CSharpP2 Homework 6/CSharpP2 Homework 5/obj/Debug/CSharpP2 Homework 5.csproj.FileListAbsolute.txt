@@ -38,3 +38,23 @@ D:\gitRepo\CSharpP2 Homework 5\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5
 D:\gitRepo\CSharpP2 Homework 5\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.csproj.CoreCompileInputs.cache
 D:\gitRepo\CSharpP2 Homework 5\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.exe
 D:\gitRepo\CSharpP2 Homework 5\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.pdb
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\CSharpP2 Homework 5.exe.config
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\CSharpP2 Homework 5.exe
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\CSharpP2 Homework 5.pdb
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\MaterialDesignColors.dll
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.csprojResolveAssemblyReference.cache
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\MainWindow.g.cs
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\App.g.cs
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5_MarkupCompile.cache
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5_MarkupCompile.lref
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\App.baml
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\MainWindow.baml
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.g.resources
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2_Homework_5.Properties.Resources.resources
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.csproj.GenerateResource.Cache
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.csproj.CoreCompileInputs.cache
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.exe
+D:\gitRepo\CSharpP2 Homework 6\CSharpP2 Homework 5\obj\Debug\CSharpP2 Homework 5.pdb
