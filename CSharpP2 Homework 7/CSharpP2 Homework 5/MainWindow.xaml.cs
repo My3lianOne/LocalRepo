@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,8 @@ namespace CSharpP2_Homework_5
 
             dhAddEmp.DialogClosing += (s, e) => { p.AddEmpDialogClosing(e); };
             dhAddDep.DialogClosing += (s, e) => { p.AddDepDialogClosing(e); };
+            btnDeleteEmp.Click += (s, e) => { p.model.DeleteEmp(); };
+            btnDeleteDep.Click += (s, e) => { p.model.DeleteDep(); };
         }
 
     }

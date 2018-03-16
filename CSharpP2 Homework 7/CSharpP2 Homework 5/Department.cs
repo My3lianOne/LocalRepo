@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace CSharpP2_Homework_5
         string name;
         public string Name { get => name; }
         public int ID { get; private set; }
+
 
         static int currentID = 0;
 

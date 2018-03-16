@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace CSharpP2_Homework_5
 {
@@ -12,12 +13,13 @@ namespace CSharpP2_Homework_5
     {
         private Model model;
         private MainWindow view;
+        private DataBaseController dbController;
 
         public Presenter(MainWindow View)
         {
             this.view = View;
             model = new Model();
-
+            dbController = new DataBaseController();
             view.DataContext = model;
         }
 
@@ -30,7 +32,8 @@ namespace CSharpP2_Homework_5
                 ClearAddEmpDialog();
                 return;
             }
-            model.Employees.Add(new Employee( view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, view.cbDeps.SelectedValue != null ? (int)view.cbDeps.SelectedValue : 0));
+            dbController.AddData(Employee.AddCommand, view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, (int)view.cbDeps.SelectedValue);
+            
             ClearAddEmpDialog();
         }
 
@@ -50,6 +53,17 @@ namespace CSharpP2_Homework_5
             }
             model.Departments.Add(new Department(view.tbDepName.Text));
             view.tbDepName.Clear();
+        }
+
+
+        public void DeleteEmp()
+        {
+            dbController.DeleteData(Employee.DeleteCommand, view.gEmployees);
+        }
+
+        public void DeleteDep()
+        {
+            dbController.DeleteData(Employee.DeleteCommand, view.gDepartment);
         }
     }
 }

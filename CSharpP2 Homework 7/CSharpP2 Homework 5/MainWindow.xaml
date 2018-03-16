@@ -64,19 +64,15 @@
                             <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Style="{StaticResource MaterialDesignRaisedButton}"
                                 Content="Добавить" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
                         </DockPanel>
-
-                        <ListBox x:Name="lbEmployee" ItemsSource="{Binding Employees}"  VerticalAlignment="Top" DockPanel.Dock="Top" HorizontalContentAlignment="Stretch">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <materialDesign:Card>
-                                        <DockPanel>
-                                            <TextBlock Text ="{Binding FullName}"  Padding="10" DockPanel.Dock="Top"/>
-                                            <TextBlock Text ="{Binding Department}"  Padding="10" DockPanel.Dock="Top"/>
-                                        </DockPanel>
-                                    </materialDesign:Card>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
+                        <DataGrid x:Name="gEmployees" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="id" Binding="{Binding ID}" Header="ID"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="surname" Binding="{Binding SURNAME}" Header="Фамилия"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="name" Binding="{Binding NAME}" Header="Имя"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="patronimyc" Binding="{Binding PATRONIMYC}" Header="Отчество"></DataGridTextColumn>
+                                <DataGridTextColumn x:Name="dep" Binding="{Binding DEP}" Header="Отдел"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </DockPanel>
 
                 </materialDesign:DialogHost>

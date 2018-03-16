@@ -5,25 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Collections.ObjectModel;
+using System.Data;
 
 namespace CSharpP2_Homework_5
 {
     class Model
     {
-        ObservableCollection<Employee> employees;
-        ObservableCollection<Department> departments;
+        DataTable employees;
+        DataTable departments;
 
 
         public Model()
         {
-            employees = new ObservableCollection<Employee>();
-            departments = DepartmentBook.Departments;
+            employees = new DataTable();
+            departments = new DataTable();
         }
 
         #region Данные
 
-        public ObservableCollection<Employee> Employees { get { return this.employees; } }
-        public ObservableCollection<Department> Departments { get { return this.departments; } }
+        public DataTable Employees { get { return this.employees; } }
+        public DataTable Departments { get { return this.departments; } }
         #endregion
+
     }
 }
