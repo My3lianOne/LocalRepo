@@ -30,7 +30,7 @@
                             <ComboBox 
                                                 Name="cbDeps" 
                                                 ItemsSource="{Binding Path=Departments}" 
-                                                DisplayMemberPath="Name" 
+                                                DisplayMemberPath="FULLNAME" 
                                                 SelectedValuePath="ID"  
                                                 Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                                                 materialDesign:HintAssist.Hint="Department" 
@@ -65,13 +65,6 @@
                                 Content="Добавить" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
                         </DockPanel>
                         <DataGrid x:Name="gEmployees" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn x:Name="id" Binding="{Binding ID}" Header="ID"></DataGridTextColumn>
-                                <DataGridTextColumn x:Name="surname" Binding="{Binding SURNAME}" Header="Фамилия"></DataGridTextColumn>
-                                <DataGridTextColumn x:Name="name" Binding="{Binding NAME}" Header="Имя"></DataGridTextColumn>
-                                <DataGridTextColumn x:Name="patronimyc" Binding="{Binding PATRONIMYC}" Header="Отчество"></DataGridTextColumn>
-                                <DataGridTextColumn x:Name="dep" Binding="{Binding DEP}" Header="Отдел"></DataGridTextColumn>
-                            </DataGrid.Columns>
                         </DataGrid>
                     </DockPanel>
 
@@ -112,17 +105,8 @@
                                 Content="Добавить" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
                         </DockPanel>
 
-                        <ListBox x:Name="lbDeps" ItemsSource="{Binding Departments}"  VerticalAlignment="Top" DockPanel.Dock="Top" HorizontalContentAlignment="Stretch">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <materialDesign:Card>
-                                        <DockPanel>
-                                            <TextBlock Text ="{Binding Name}"  Padding="10" DockPanel.Dock="Top"/>
-                                        </DockPanel>
-                                    </materialDesign:Card>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
+                        <DataGrid x:Name="gDepartments" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" >
+                        </DataGrid>
                     </DockPanel>
 
                 </materialDesign:DialogHost>

@@ -9,7 +9,6 @@ namespace CSharpP2_Homework_5
 {
     static class DepartmentBook
     {
-        static ObservableCollection<Department> departments = new ObservableCollection<Department>();
-        public static ObservableCollection<Department> Departments { get { return departments; } }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,14 @@ namespace CSharpP2_Homework_5
     {
         private Model model;
         private MainWindow view;
-        private DataBaseController dbController;
 
         public Presenter(MainWindow View)
         {
             this.view = View;
             model = new Model();
-            dbController = new DataBaseController();
-            view.DataContext = model;
+            view.gDepartments.DataContext = Model.Departments.Local;
+            view.gEmployees.DataContext = Model.Employees.Local;
+            view.gEmployees.RowEditEnding += (s, e) => { model.AddEmp(e); };
         }
 
 
@@ -32,7 +33,7 @@ namespace CSharpP2_Homework_5
                 ClearAddEmpDialog();
                 return;
             }
-            dbController.AddData(Employee.AddCommand, view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, (int)view.cbDeps.SelectedValue);
+            model.AddEmp(view.tbEmpSurname.Text, view.tbEmpName.Text, view.tbEmpPatronimyc.Text, 0);
             
             ClearAddEmpDialog();
         }
@@ -51,19 +52,8 @@ namespace CSharpP2_Homework_5
                 view.tbDepName.Clear();
                 return;
             }
-            model.Departments.Add(new Department(view.tbDepName.Text));
+            model.AddDep(view.tbDepName.Text);
             view.tbDepName.Clear();
-        }
-
-
-        public void DeleteEmp()
-        {
-            dbController.DeleteData(Employee.DeleteCommand, view.gEmployees);
-        }
-
-        public void DeleteDep()
-        {
-            dbController.DeleteData(Employee.DeleteCommand, view.gDepartment);
         }
     }
 }

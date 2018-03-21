@@ -42,7 +42,9 @@ namespace CSharpP2_Homework_5
 
             DataRowView rowView = (DataRowView)dataGrid.SelectedItem;
             rowView.Row.Delete();
-            adapter.Update(dataTable);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGrid.DataContext = dt.DefaultView;
         }
 
         public void AddData(string command, string surname, string name, string patronimyc, int depID)
@@ -52,6 +54,9 @@ namespace CSharpP2_Homework_5
             sqlCommand.Parameters.Add("@NAME", SqlDbType.NVarChar, -1, "NAME");
             sqlCommand.Parameters.Add("@PATRONIMYC", SqlDbType.NVarChar, -1, "PATRONIMYC");
             sqlCommand.Parameters.Add("@DEPID", SqlDbType.Int, -1, "DEPID");
+            SqlParameter param = sqlCommand.Parameters.Add("@ID", SqlDbType.Int, 0, "ID");
+            param.Direction = ParameterDirection.Output;
+            adapter.InsertCommand = sqlCommand;
         }
 
 

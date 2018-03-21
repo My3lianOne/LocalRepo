@@ -23,9 +23,6 @@ namespace CSharpP2_Homework_5
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
-        ObservableCollection<Department> departments = new ObservableCollection<Department>();
-
 
         public MainWindow()
         {
@@ -35,8 +32,8 @@ namespace CSharpP2_Homework_5
 
             dhAddEmp.DialogClosing += (s, e) => { p.AddEmpDialogClosing(e); };
             dhAddDep.DialogClosing += (s, e) => { p.AddDepDialogClosing(e); };
-            btnDeleteEmp.Click += (s, e) => { p.model.DeleteEmp(); };
-            btnDeleteDep.Click += (s, e) => { p.model.DeleteDep(); };
+            //btnDeleteEmp.Click += (s, e) => { p.model.DeleteEmp(); };
+            //btnDeleteDep.Click += (s, e) => { p.model.DeleteDep(); };
         }
 
     }
