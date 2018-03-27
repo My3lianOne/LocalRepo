@@ -32,6 +32,8 @@ namespace CSharpP2_Homework_5
 
             dhAddEmp.DialogClosing += (s, e) => { p.AddEmpDialogClosing(e); };
             dhAddDep.DialogClosing += (s, e) => { p.AddDepDialogClosing(e); };
+            btnDeleteEmp.Click += (s, e) => { p.DeleteEmp(e); };
+            btnDeleteDep.Click += (s, e) => { p.DeleteDep(); };
             //btnDeleteEmp.Click += (s, e) => { p.model.DeleteEmp(); };
             //btnDeleteDep.Click += (s, e) => { p.model.DeleteDep(); };
         }

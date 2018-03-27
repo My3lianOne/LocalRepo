@@ -27,15 +27,16 @@
                             <TextBox Margin="0,8,0,0" HorizontalAlignment="Stretch" x:Name="tbEmpSurname"/>
                             <TextBox HorizontalAlignment="Stretch" x:Name="tbEmpName"/>
                             <TextBox HorizontalAlignment="Stretch" x:Name="tbEmpPatronimyc"/>
-                            <ComboBox 
-                                                Name="cbDeps" 
-                                                ItemsSource="{Binding Path=Departments}" 
-                                                DisplayMemberPath="FULLNAME" 
-                                                SelectedValuePath="ID"  
-                                                Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
-                                                materialDesign:HintAssist.Hint="Department" 
-                                                DockPanel.Dock="Bottom"
-                                                Margin="5">
+                            <ComboBox
+                                Name="cbDeps"
+                                DisplayMemberPath="FULLNAME"
+                                SelectedValuePath="ID"  
+                                Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                                materialDesign:HintAssist.Hint="Department" 
+                                DockPanel.Dock="Bottom"
+                                Margin="5"
+                                SelectedValue="{Binding Path=ID}">
+                                
                             </ComboBox>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button Style="{StaticResource MaterialDesignFlatButton}"
@@ -63,8 +64,10 @@
                         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,0,78,0" Width="433">
                             <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Style="{StaticResource MaterialDesignRaisedButton}"
                                 Content="Добавить" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
+                            <Button x:Name="btnDeleteEmp" Style="{StaticResource MaterialDesignRaisedButton}"
+                                Content="Удалить" Margin="5" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
                         </DockPanel>
-                        <DataGrid x:Name="gEmployees" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" >
+                        <DataGrid x:Name="gEmployees" HorizontalContentAlignment="Stretch" >
                         </DataGrid>
                     </DockPanel>
 
@@ -103,9 +106,15 @@
                         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,0,78,0" Width="433">
                             <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Style="{StaticResource MaterialDesignRaisedButton}"
                                 Content="Добавить" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
+                            <Button x:Name="btnDeleteDep" Style="{StaticResource MaterialDesignRaisedButton}"
+                                Content="Удалить" Margin="5" Height="24" Width="100" Background="#FF008AEA" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" />
                         </DockPanel>
 
-                        <DataGrid x:Name="gDepartments" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" >
+                        <DataGrid x:Name="gDepartments" AutoGenerateColumns="False"  HorizontalContentAlignment="Stretch" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding ID}" Header="ID" Width="100"/>
+                                <DataGridTextColumn Binding="{Binding FULLNAME}" Header="Наименование" Width="100"/>
+                            </DataGrid.Columns>
                         </DataGrid>
                     </DockPanel>
 

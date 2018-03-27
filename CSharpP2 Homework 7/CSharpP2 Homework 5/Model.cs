@@ -22,7 +22,9 @@ namespace CSharpP2_Homework_5
 
         public Model()
         {
-            db = new homeworkdbEntities();           
+            db = new homeworkdbEntities();
+            db.EMPLOYEES.Load();
+            db.DEPARTMENT.Load();
         }
 
         #region Данные
@@ -31,16 +33,9 @@ namespace CSharpP2_Homework_5
         #endregion
 
 
-
-        internal void AddEmp(DataGridRowEditEndingEventArgs e)
-        {
-            Employees.Add(new EMPLOYEES() { });
-            db.SaveChanges();
-        }
-
         public void AddEmp(string name, string surname, string patronymic, int depID)
         {
-            Employees.Add(new EMPLOYEES() { NAME = name, SURNAME = surname, PATRONYMIC = patronymic, DEPID = depID });
+            Employees.Add(new EMPLOYEES() { NAME = name, SURNAME = surname, PATRONYMIC = patronymic, DEPID = depID }); 
             db.SaveChanges();
         }
 
