@@ -29,18 +29,8 @@ namespace PatternsHW6
         /// Метод запроса средств
         /// </summary>
         /// <param name="count"></param>
-        public void RequestMoney(double count)
-        {
-            if (!CheckLimit(count))
-                if (nextNode != null)
-                    nextNode.RequestMoney(count);
-        }
+        public abstract void RequestMoney(Request request);
 
-        /// <summary>
-        /// Метод проверки лимита
-        /// </summary>
-        /// <param name="count">Запрашиваемая сумма</param>
-        /// <returns></returns>
-        protected abstract bool CheckLimit(double count);
+        public abstract void RequestMoney();
     }
 }

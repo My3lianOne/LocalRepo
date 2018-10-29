@@ -12,15 +12,33 @@ namespace PatternsHW6
     public class WorkerNode : Node
     {
         
-        public WorkerNode(double limit)
+        public WorkerNode()
         {
-            this.limit = limit;
         }
-
-        protected override bool CheckLimit(double count)
+        public override void RequestMoney(Request request) { }
+        public override void RequestMoney()
         {
-            Console.WriteLine("Требуется одобрение выдачи запрашиваемой суммы руководителем");
-            return false;
+            Console.WriteLine();
+            Console.WriteLine("РМ РАБОТНИКА");
+            Console.WriteLine();
+            Request request = CreateRequest();
+            nextNode.RequestMoney(request);
+
+            request.Print();
+        } 
+        private Request CreateRequest()
+        {
+            Console.WriteLine("Введите ФИО:");
+            string FIO = Console.ReadLine();
+
+            Console.WriteLine("Введите сумму:");
+            double count;
+            double.TryParse(Console.ReadLine(), out count);
+
+            Console.WriteLine("Введите назначение:");
+            string purpose = Console.ReadLine();
+
+            return new Request(FIO, purpose, count);
         }
     }
 
@@ -33,16 +51,42 @@ namespace PatternsHW6
         {
             this.limit = limit;
         }
+        public override void RequestMoney() { }
 
-        protected override bool CheckLimit(double count)
+        public override void RequestMoney(Request request)
         {
-            if (count <= limit)
+            Console.WriteLine();
+            Console.WriteLine("РМ РУКОВОДИТЕЛЯ");
+            Console.WriteLine();
+            request.Print();
+            if (request.Count <= limit)
             {
-                Console.WriteLine("Выдача запрашиваемой суммы одобрена.");
-                return true;
+                Console.WriteLine($"Одобрить выдачу? (да\\нет)");
+                if (Console.ReadLine().ToUpper() == "ДА")
+                {
+                    request.Approve();
+                }
+                else
+                {
+                    Console.WriteLine("Укажите причину отказа:");
+                    string reason = Console.ReadLine();
+                    request.Decline(reason);
+                }
             }
-            Console.WriteLine("Требуется одобрение выдачи запрашиваемой суммы директором.");
-            return false;
+            else
+            {
+                Console.WriteLine("Недостаточно прав на одобрение указанной суммы. Передать на согласование вышестоящему руководству? (да\\нет)");
+                if (Console.ReadLine().ToUpper() == "ДА")
+                {
+                    nextNode.RequestMoney(request);
+                }
+                else
+                {
+                    Console.WriteLine("Укажите причину отказа:");
+                    string reason = Console.ReadLine();
+                    request.Decline(reason);
+                }
+            }
         }
     }
 
@@ -56,15 +100,26 @@ namespace PatternsHW6
             this.limit = limit;
         }
 
-        protected override bool CheckLimit(double count)
+        public override void RequestMoney() { }
+
+        public override void RequestMoney(Request request)
         {
-            if (count <= limit)
+            Console.WriteLine();
+            Console.WriteLine("РМ ДИРЕКТОРА");
+            Console.WriteLine();
+            request.Print();
+            Console.WriteLine($"Одобрить выдачу? (да\\нет)");
+            if (Console.ReadLine().ToUpper() == "ДА")
             {
-                Console.WriteLine("Выдача запрашиваемой суммы одобрена.");
-                return true;
+                request.Approve();
+                Console.WriteLine("Заявка одобрена");
             }
-            Console.WriteLine("Превышен допустимый лимит. В выдаче средств отказано.");
-            return false;
+            else
+            {
+                Console.WriteLine("Укажите причину отказа:");
+                string reason = Console.ReadLine();
+                request.Decline(reason);
+            }
         }
     }
 }
