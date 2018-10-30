@@ -24,6 +24,7 @@ namespace PatternsHW6
 
         static void Main(string[] args)
         {
+            // Создаем цепь
             Node nodes = GetChainOfNodes();
         
             nodes.RequestMoney();

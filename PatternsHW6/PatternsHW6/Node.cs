@@ -9,7 +9,7 @@ namespace PatternsHW6
     public abstract class Node
     {
         /// <summary>
-        /// Лимит на выдачу
+        /// Лимит на выдачу средств
         /// </summary>
         protected double limit;
 

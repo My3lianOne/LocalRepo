@@ -15,6 +15,7 @@ namespace PatternsHW6
         public WorkerNode()
         {
         }
+
         public override void RequestMoney(Request request) { }
         public override void RequestMoney()
         {
@@ -26,6 +27,11 @@ namespace PatternsHW6
 
             request.Print();
         } 
+
+        /// <summary>
+        /// Метод создания запроса на получение средств.
+        /// </summary>
+        /// <returns>Запрос</returns>
         private Request CreateRequest()
         {
             Console.WriteLine("Введите ФИО:");
